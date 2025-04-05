@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Diagnosis Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: auto; }
+        textarea { width: 100%; height: 100px; }
+        .btn { background-color: green; color: white; padding: 10px 20px; border: none; }
+        .result { margin-top: 20px; border: 1px solid #ddd; padding: 15px; border-radius: 10px; }
+    </style>
+</head>
+<body>
+    <h2>🌿 AI Disease Diagnostic Portal</h2>
+    <form method="post">
+        <label>Enter symptoms (crop or animal):</label><br><br>
+        <textarea name="symptoms" required></textarea><br><br>
+        <button class="btn">Diagnose</button>
+    </form>
+
+    {% if result %}
+    <div class="result">
+        <h4>🧬 Diagnosis: {{ result.diagnosis }}</h4>
+        <p>💊 Treatment: {{ result.treatment }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
